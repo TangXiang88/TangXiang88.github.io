@@ -4,11 +4,155 @@
   
     
     <entry>
+      <title>计算机网络</title>
+      <link href="/2022/07/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <url>/2022/07/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据结构</title>
+      <link href="/2022/07/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <url>/2022/07/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>css</title>
+      <link href="/2022/07/30/css/"/>
+      <url>/2022/07/30/css/</url>
+      
+        <content type="html"><![CDATA[<h1 id="元素水平垂直居中的方法有哪些？如果元素不定宽高呢？"><a href="#元素水平垂直居中的方法有哪些？如果元素不定宽高呢？" class="headerlink" title="元素水平垂直居中的方法有哪些？如果元素不定宽高呢？"></a>元素水平垂直居中的方法有哪些？如果元素不定宽高呢？</h1><p>利用定位+margin:auto</p><p>利用定位+margin:负值</p><p>利用定位+transform</p><p>table布局</p><p>flex布局</p><p>grid布局</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> css </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>es6</title>
+      <link href="/2022/07/30/es6/"/>
+      <url>/2022/07/30/es6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="说说var、let、const之间的区别"><a href="#说说var、let、const之间的区别" class="headerlink" title="说说var、let、const之间的区别"></a>说说var、let、const之间的区别</h1><p>（1）块级作用域：块作用域由 { }包括,let和const具有块级作用域,var不存在块级作用域。</p><p>（2）变量提升：var存在变量提升,let和const不存在变量提升,即在变量只能在声明之后使用,否在会报错。</p><p>（3）重复声明：var声明变量时,可以重复声明变量,后声明的同名变量会覆盖之前声明的遍历。const和let不允许重复声明变量。</p><p>（4）暂时性死区：在使用let、const命令声明变量之前,该变量都是不可用的。这在语法上,称为暂时性死区。使用var声明的变量不存在暂时性死区。</p><p>（5）初始值设置：在变量声明时,var 和 let 可以不用设置初始值。而const声明变量必须设置初始值</p><h1 id="ES6中数组新增了哪些扩展？"><a href="#ES6中数组新增了哪些扩展？" class="headerlink" title="ES6中数组新增了哪些扩展？"></a>ES6中数组新增了哪些扩展？</h1><h2 id="一、扩展运算符的应用"><a href="#一、扩展运算符的应用" class="headerlink" title="一、扩展运算符的应用"></a>一、扩展运算符的应用</h2><p>ES6通过扩展元素符…，好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">console.log(...[1, 2, 3])</span><br><span class="line">// 1 2 3</span><br><span class="line"></span><br><span class="line">console.log(1, ...[2, 3, 4], 5)</span><br><span class="line">// 1 2 3 4 5</span><br><span class="line"></span><br><span class="line">[...document.querySelectorAll(&#x27;div&#x27;)]</span><br></pre></td></tr></table></figure><h2 id="二、实例对象新增的方法"><a href="#二、实例对象新增的方法" class="headerlink" title="二、实例对象新增的方法"></a>二、实例对象新增的方法</h2><p>copyWithin()<br>find()、findIndex()<br>fill()<br>entries()，keys()，values()<br>includes()<br>flat()，flatMap()</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> es6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> es6 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue</title>
+      <link href="/2022/07/30/vue/"/>
+      <url>/2022/07/30/vue/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-怎么理解mvvm这种设计模式"><a href="#1-怎么理解mvvm这种设计模式" class="headerlink" title="1.怎么理解mvvm这种设计模式"></a>1.怎么理解mvvm这种设计模式</h1><p> Model–View–ViewModel （MVVM） 是一个软件架构设计模式，是一种简化用户界面的事件驱动编程方式。<br>MVVM<br>    M Model 模型 指的是数据层<br>    V View  视图 指的是用户页面<br>    VM ViewModel 视图模型<br>    视图模型是MVVM模式的核心，它是连接view和model的桥梁，MVVM实现了view和model的自动同步，当model的属性改变时，我们不用自己手动操作DOM元素，来改变view的显示，反之亦然，我们称之为数据的双向绑定。</p><h1 id="2-v-if和v-show的区别，使用场景区别"><a href="#2-v-if和v-show的区别，使用场景区别" class="headerlink" title="2.v-if和v-show的区别，使用场景区别"></a>2.v-if和v-show的区别，使用场景区别</h1><p>v-if和v-show看起来似乎差不多，当条件不成立时，其所对应的标签元素都不可见，但是这两个选项是有区别的:<br>1、v-if在条件切换时，会对标签进行适当的创建和销毁，而v-show则仅在初始化时加载一次，因此v-if的开销相对来说会比v-show大。<br>2、v-if是惰性的，只有当条件为真时才会真正渲染标签；如果初始条件不为真，则v-if不会去渲染标签。v-show则无论初始条件是否成立，都会渲染标签，它仅仅做的只是简单的CSS（display）切换。</p><p>3、 v-if适用于不需要频繁切换元素显示和隐藏的情况<br>    v-show适用于需要频繁切换元素的显示和隐藏的场景。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>image</title>
+      <link href="/2022/07/29/image/"/>
+      <url>/2022/07/29/image/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2022/07/29/image/2022-07-29-21-56-43.png"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>代码演示</title>
       <link href="/2022/05/29/%E4%BB%A3%E7%A0%81%E5%9D%97/%E6%BC%94%E7%A4%BA/"/>
       <url>/2022/05/29/%E4%BB%A3%E7%A0%81%E5%9D%97/%E6%BC%94%E7%A4%BA/</url>
       
-        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;use strict&#x27;;</span><br><span class="line"></span><br><span class="line">let showModal = document.querySelectorAll(&#x27;.show-modal&#x27;);</span><br><span class="line">let close = document.querySelector(&#x27;.close-modal&#x27;);</span><br><span class="line">let modal = document.querySelector(&#x27;.modal&#x27;);</span><br><span class="line">let overlay = document.querySelector(&#x27;.overlay&#x27;);</span><br><span class="line"></span><br><span class="line">const openModal = function () &#123;</span><br><span class="line">  modal.classList.remove(&#x27;hidden&#x27;);</span><br><span class="line">  overlay.classList.remove(&#x27;hidden&#x27;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const closeModal = function () &#123;</span><br><span class="line">  overlay.classList.add(&#x27;hidden&#x27;);</span><br><span class="line">  modal.classList.add(&#x27;hidden&#x27;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">for (let i = 0; i &lt; showModal.length; i++) &#123;</span><br><span class="line">  showModal[i].addEventListener(&#x27;click&#x27;, openModal);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">close.addEventListener(&#x27;click&#x27;, closeModal);</span><br><span class="line">overlay.addEventListener(&#x27;click&#x27;, closeModal);</span><br><span class="line">document.addEventListener(&#x27;keydown&#x27;, function (e) &#123;</span><br><span class="line">  if (e.key === &#x27;Escape&#x27; &amp;&amp; !modal.classList.contains(&#x27;hidden&#x27;)) &#123;</span><br><span class="line">    closeModal();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h1><h1 id="图片演示"><a href="#图片演示" class="headerlink" title="图片演示"></a>图片演示</h1><p><img src="/2022/05/29/%E4%BB%A3%E7%A0%81%E5%9D%97/%E6%BC%94%E7%A4%BA/2022-07-29-21-54-48.png"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;use strict&#x27;;</span><br><span class="line"></span><br><span class="line">let showModal = document.querySelectorAll(&#x27;.show-modal&#x27;);</span><br><span class="line">let close = document.querySelector(&#x27;.close-modal&#x27;);</span><br><span class="line">let modal = document.querySelector(&#x27;.modal&#x27;);</span><br><span class="line">let overlay = document.querySelector(&#x27;.overlay&#x27;);</span><br><span class="line"></span><br><span class="line">const openModal = function () &#123;</span><br><span class="line">  modal.classList.remove(&#x27;hidden&#x27;);</span><br><span class="line">  overlay.classList.remove(&#x27;hidden&#x27;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const closeModal = function () &#123;</span><br><span class="line">  overlay.classList.add(&#x27;hidden&#x27;);</span><br><span class="line">  modal.classList.add(&#x27;hidden&#x27;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">for (let i = 0; i &lt; showModal.length; i++) &#123;</span><br><span class="line">  showModal[i].addEventListener(&#x27;click&#x27;, openModal);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">close.addEventListener(&#x27;click&#x27;, closeModal);</span><br><span class="line">overlay.addEventListener(&#x27;click&#x27;, closeModal);</span><br><span class="line">document.addEventListener(&#x27;keydown&#x27;, function (e) &#123;</span><br><span class="line">  if (e.key === &#x27;Escape&#x27; &amp;&amp; !modal.classList.contains(&#x27;hidden&#x27;)) &#123;</span><br><span class="line">    closeModal();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
