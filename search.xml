@@ -33,7 +33,7 @@
       <link href="/2022/07/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
       <url>/2022/07/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="1栈"><a href="#1栈" class="headerlink" title="1栈"></a>1栈</h1><p>栈是一个先进后出的线性数据结构<br>js里面没有这个数据结构,但是我们可以用数组来模拟<br>push：进栈<br>pop：出栈</p><p>我们来看第一次例子<br>leetcode20题 有效的括号</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @param &#123;string&#125; s</span><br><span class="line"> * @return &#123;boolean&#125;</span><br><span class="line"> */</span><br><span class="line">var isValid = function(s) &#123;</span><br><span class="line">    const stack = []</span><br><span class="line">    for(let i = 0;i &lt; s.length;i++)&#123;</span><br><span class="line">        const c = s[i]</span><br><span class="line">        if(c === &#x27;(&#x27; || c === &#x27;&#123;&#x27; || c === &#x27;[&#x27;)&#123;</span><br><span class="line">            stack.push(c)</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            const t = stack[stack.length-1]</span><br><span class="line">            if(</span><br><span class="line">                (t === &#x27;(&#x27;&amp;&amp;c === &#x27;)&#x27;)||</span><br><span class="line">                (t === &#x27;[&#x27;&amp;&amp;c === &#x27;]&#x27;)||</span><br><span class="line">                (t === &#x27;&#123;&#x27;&amp;&amp;c === &#x27;&#125;&#x27;)</span><br><span class="line">                )&#123;</span><br><span class="line">                stack.pop()</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                return false</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return stack.length === 0</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h1 id="2队列"><a href="#2队列" class="headerlink" title="2队列"></a>2队列</h1><p>队列是一个先进先出的线性数据结构<br>js里面没有这个数据结构,但是我们可以用数组来模拟<br>push：进队列<br>pop：出队列</p><p>我们来看第一次例子<br>leetcode933题 最近的请求次数</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var RecentCounter = function() &#123;</span><br><span class="line">    this.q = []</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/** </span><br><span class="line"> * @param &#123;number&#125; t</span><br><span class="line"> * @return &#123;number&#125;</span><br><span class="line"> */</span><br><span class="line">RecentCounter.prototype.ping = function(t) &#123;</span><br><span class="line">this.q.push(t)</span><br><span class="line">while(this.q[0]&lt;t-3000)&#123;</span><br><span class="line">    this.q.shift()</span><br><span class="line">&#125;</span><br><span class="line">return this.q.length</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -133,7 +133,7 @@
       <link href="/2022/07/29/image/"/>
       <url>/2022/07/29/image/</url>
       
-        <content type="html"><![CDATA[<p><img src="/2022/07/29/image/2022-07-29-21-56-43.png"></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="/2022/07/29/image/2022-07-29-21-56-43.png"><br><img src="/2022/07/29/image/2022-07-30-14-44-06.png"></p>]]></content>
       
       
       
