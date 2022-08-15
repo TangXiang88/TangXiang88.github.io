@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>js数组方法汇总 | 不改了</title><meta name="keywords" content="js数组方法汇总"><meta name="author" content="唐翔"><meta name="copyright" content="唐翔"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="开篇既然是数组，是一种数据类型，必然是增删查改让我们一起来了解这种数据类型的一些常用的方法吧 头尾增删arr.push(…items)– 将项目添加到末尾，arr.pop()– 从末尾提取一个项目，arr.shift()– 从头提取一个项目，arr.unshift(…items)- 将项目添加到开头 splicearr.splice方法是数组的瑞士军刀。它可以做任何事情：插入、删除和替换元素arr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js数组方法汇总">
+<meta property="og:url" content="http://example.com/2022/08/12/js%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/index.html">
+<meta property="og:site_name" content="不改了">
+<meta property="og:description" content="开篇既然是数组，是一种数据类型，必然是增删查改让我们一起来了解这种数据类型的一些常用的方法吧 头尾增删arr.push(…items)– 将项目添加到末尾，arr.pop()– 从末尾提取一个项目，arr.shift()– 从头提取一个项目，arr.unshift(…items)- 将项目添加到开头 splicearr.splice方法是数组的瑞士军刀。它可以做任何事情：插入、删除和替换元素arr">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2022-08-12T02:04:15.000Z">
+<meta property="article:modified_time" content="2022-08-12T08:15:28.821Z">
+<meta property="article:author" content="唐翔">
+<meta property="article:tag" content="js数组方法汇总">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/08/12/js%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'js数组方法汇总',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-12 16:15:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/bg.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/bg.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 時間軸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清單</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音樂</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 電影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">不改了</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 時間軸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清單</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音樂</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 電影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">js数组方法汇总</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-12T02:04:15.000Z" title="发表于 2022-08-12 10:04:15">2022-08-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-12T08:15:28.821Z" title="更新于 2022-08-12 16:15:28">2022-08-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/js%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/">js数组方法汇总</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="js数组方法汇总"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="开篇"><a href="#开篇" class="headerlink" title="开篇"></a>开篇</h1><p>既然是数组，是一种数据类型，必然是增删查改<br>让我们一起来了解这种数据类型的一些常用的方法吧</p>
+<h1 id="头尾增删"><a href="#头尾增删" class="headerlink" title="头尾增删"></a>头尾增删</h1><p>arr.push(…items)– 将项目添加到末尾，<br>arr.pop()– 从末尾提取一个项目，<br>arr.shift()– 从头提取一个项目，<br>arr.unshift(…items)- 将项目添加到开头</p>
+<h1 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h1><p>arr.splice方法是数组的瑞士军刀。它可以做任何事情：插入、删除和替换元素<br>arr.splice(start, deleteCount, elem1, …, elemN)<br>第一个参数：start:开始删除的索引<br>第二个参数：deleteCount：删除的个数<br>后面的参数：替换的元素<br>一起来看几个例子吧</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let arr = [&quot;I&quot;, &quot;go&quot;, &quot;home&quot;];</span><br><span class="line"></span><br><span class="line">delete arr[1]; // remove &quot;go&quot;</span><br><span class="line"></span><br><span class="line">alert( arr[1] ); // undefined</span><br><span class="line"></span><br><span class="line">// now arr = [&quot;I&quot;,  , &quot;home&quot;];</span><br><span class="line">alert( arr.length ); // 3</span><br></pre></td></tr></table></figure>
+<p>删除</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let arr = [&quot;I&quot;, &quot;study&quot;, &quot;JavaScript&quot;];</span><br><span class="line"></span><br><span class="line">arr.splice(1, 1); // from index 1 remove 1 element</span><br><span class="line"></span><br><span class="line">alert( arr ); // [&quot;I&quot;, &quot;JavaScript&quot;]</span><br></pre></td></tr></table></figure>
+<p>替换<br>在下一个示例中，我们删除 3 个元素并用另外两个替换它们：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let arr = [&quot;I&quot;, &quot;study&quot;, &quot;JavaScript&quot;, &quot;right&quot;, &quot;now&quot;];</span><br><span class="line"></span><br><span class="line">// remove 3 first elements and replace them with another</span><br><span class="line">arr.splice(0, 3, &quot;Let&#x27;s&quot;, &quot;dance&quot;);</span><br><span class="line"></span><br><span class="line">alert( arr ) // now [&quot;Let&#x27;s&quot;, &quot;dance&quot;, &quot;right&quot;, &quot;now&quot;]</span><br></pre></td></tr></table></figure>
+
+<p>在这里和其他数组方法中，允许使用负索引。它们指定从数组末尾开始的位置，如下所示</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let arr = [1, 2, 5];</span><br><span class="line"></span><br><span class="line">// from index -1 (one step from the end)</span><br><span class="line">// delete 0 elements,</span><br><span class="line">// then insert 3 and 4</span><br><span class="line">arr.splice(-1, 0, 3, 4);</span><br><span class="line"></span><br><span class="line">alert( arr ); // 1,2,3,4,5</span><br></pre></td></tr></table></figure>
+
+<h1 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h1><p>arr.slice(start, end)<br>它返回一个新数组，将所有项目从索引复制到start（end不包括end）。两者start和end都可以是负数，在这种情况下，假设从数组末端开始。</p>
+<p>它类似于字符串方法str.slice，但它不是子字符串，而是子数组。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let arr = [&quot;t&quot;, &quot;e&quot;, &quot;s&quot;, &quot;t&quot;];</span><br><span class="line"></span><br><span class="line">alert( arr.slice(1, 3) ); // e,s (copy from 1 to 3)</span><br><span class="line"></span><br><span class="line">alert( arr.slice(-2) ); // s,t (copy from -2 till the end)</span><br></pre></td></tr></table></figure>
+<h1 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h1><p>方法arr.concat创建一个新数组，其中包括来自其他数组的值和其他项。</p>
+<p>语法是：</p>
+<p>arr.concat(arg1, arg2…)<br>它接受任意数量的参数——数组或值。</p>
+<p>结果是一个新数组，其中包含来自arr、 thenarg1等的项目arg2。</p>
+<p>如果参数argN是数组，则复制其所有元素。否则，将复制参数本身。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let arr = [1, 2];</span><br><span class="line"></span><br><span class="line">// create an array from: arr and [3,4]</span><br><span class="line">alert( arr.concat([3, 4]) ); // 1,2,3,4</span><br><span class="line"></span><br><span class="line">// create an array from: arr and [3,4] and [5,6]</span><br><span class="line">alert( arr.concat([3, 4], [5, 6]) ); // 1,2,3,4,5,6</span><br><span class="line"></span><br><span class="line">// create an array from: arr and [3,4], then add values 5 and 6</span><br><span class="line">alert( arr.concat([3, 4], 5, 6) ); // 1,2,3,4,5,6</span><br></pre></td></tr></table></figure>
+<h1 id="在数组中搜索indexOf-lastIndexOf-and-includes"><a href="#在数组中搜索indexOf-lastIndexOf-and-includes" class="headerlink" title="在数组中搜索indexOf/lastIndexOf and includes"></a>在数组中搜索indexOf/lastIndexOf and includes</h1><p>方法arr.indexOf和arr.includes具有相似的语法，并且与它们的字符串对应物基本相同，但对项目而不是字符进行操作：</p>
+<p>arr.indexOf(item, from)–item从 index 开始查找from，并返回找到它的索引，否则返回-1。<br>arr.includes(item, from)–item从 index 开始查找，如果找到则from返回。true<br>通常这些方法只与一个参数一起使用：item搜索。默认情况下，搜索是从头开始的。</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let arr = [1, 0, false];</span><br><span class="line"></span><br><span class="line">alert( arr.indexOf(0) ); // 1</span><br><span class="line">alert( arr.indexOf(false) ); // 2</span><br><span class="line">alert( arr.indexOf(null) ); // -1</span><br><span class="line"></span><br><span class="line">alert( arr.includes(1) ); // true</span><br></pre></td></tr></table></figure>
+<p>请注意，indexOf使用严格相等===进行比较。因此，如果我们寻找false，它会准确找到false而不是零。</p>
+<p>如果我们想检查item数组中是否存在，并且不需要确切的索引，那么arr.includes首选。</p>
+<p>方法arr.lastIndexOf与 相同indexOf，但从右到左查找。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let fruits = [&#x27;Apple&#x27;, &#x27;Orange&#x27;, &#x27;Apple&#x27;]</span><br><span class="line"></span><br><span class="line">alert( arr.indexOf(&#x27;Apple&#x27;) ); // 0 (first Apple)</span><br><span class="line">alert( arr.lastIndexOf(&#x27;Apple&#x27;) ); // 2 (last Apple)</span><br></pre></td></tr></table></figure>
+<h1 id="find-and-findIndex-findLastIndex"><a href="#find-and-findIndex-findLastIndex" class="headerlink" title="find and findIndex/findLastIndex"></a>find and findIndex/findLastIndex</h1><p>想象一下，我们有一个对象数组。我们如何找到具有特定条件的对象？</p>
+<p>这里arr.find(fn)方法就派上用场了。</p>
+<p>语法是：</p>
+<p>let result = arr.find(function(item, index, array) {<br>  // if true is returned, item is returned and iteration is stopped<br>  // for falsy scenario returns undefined<br>});<br>该函数被一个接一个地调用数组的元素：</p>
+<p>item是元素。<br>index是它的索引。<br>array是数组本身。<br>如果返回true，则停止搜索，item返回 。如果没有找到，undefined则返回。</p>
+<p>例如，我们有一个用户数组，每个用户都有字段id和name。让我们找到一个id == 1：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let users = [</span><br><span class="line">  &#123;id: 1, name: &quot;John&quot;&#125;,</span><br><span class="line">  &#123;id: 2, name: &quot;Pete&quot;&#125;,</span><br><span class="line">  &#123;id: 3, name: &quot;Mary&quot;&#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">let user = users.find(item =&gt; item.id == 1);</span><br><span class="line"></span><br><span class="line">alert(user.name); // John</span><br></pre></td></tr></table></figure>
+<p>在现实生活中，对象数组是很常见的事情，因此该find方法非常有用。</p>
+<p>请注意，在示例中，我们为find函数item =&gt; item.id == 1提供了一个参数。这是典型的，这个函数的其他参数很少使用。</p>
+<p>arr.findIndex方法具有相同的语法，但返回找到元素的索引而不是元素本身。-1如果没有找到，则返回 的值。</p>
+<p>arr.findLastIndex方法类似于，findIndex但从右到左搜索，类似于lastIndexOf。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let users = [</span><br><span class="line">  &#123;id: 1, name: &quot;John&quot;&#125;,</span><br><span class="line">  &#123;id: 2, name: &quot;Pete&quot;&#125;,</span><br><span class="line">  &#123;id: 3, name: &quot;Mary&quot;&#125;,</span><br><span class="line">  &#123;id: 4, name: &quot;John&quot;&#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">// Find the index of the first John</span><br><span class="line">alert(users.findIndex(user =&gt; user.name == &#x27;John&#x27;)); // 0</span><br><span class="line"></span><br><span class="line">// Find the index of the last John</span><br><span class="line">alert(users.findLastIndex(user =&gt; user.name == &#x27;John&#x27;)); // 3</span><br></pre></td></tr></table></figure>
+<p>filter<br>该find方法查找使函数返回的单个（第一个）元素true。</p>
+<p>如果可能有很多，我们可以使用arr.filter(fn)。</p>
+<p>语法类似于find，但filter返回一个包含所有匹配元素的数组：</p>
+<p>let results = arr.filter(function(item, index, array) {<br>  // if true item is pushed to results and the iteration continues<br>  // returns empty array if nothing found<br>});</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let users = [</span><br><span class="line">  &#123;id: 1, name: &quot;John&quot;&#125;,</span><br><span class="line">  &#123;id: 2, name: &quot;Pete&quot;&#125;,</span><br><span class="line">  &#123;id: 3, name: &quot;Mary&quot;&#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">// returns array of the first two users</span><br><span class="line">let someUsers = users.filter(item =&gt; item.id &lt; 3);</span><br><span class="line"></span><br><span class="line">alert(someUsers.length); // 2</span><br></pre></td></tr></table></figure>
+<h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><p>arr.map方法是最有用和最常用的方法之一。</p>
+<p>它为数组的每个元素调用函数并返回结果数组。</p>
+<p>语法是：let result = arr.map(function(item, index, array) {<br>  // returns the new value instead of item<br>});<br>例如，在这里我们将每个元素转换为它的长度：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let lengths = [&quot;Bilbo&quot;, &quot;Gandalf&quot;, &quot;Nazgul&quot;].map(item =&gt; item.length);</span><br><span class="line">alert(lengths); // 5,7,6</span><br></pre></td></tr></table></figure>
+
+<h1 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h1><p>对arr.sort()的调用对数组进行就地排序，改变其元素顺序。</p>
+<p>它还返回排序后的数组，但返回的值通常会被忽略，因为arr它本身已被修改。</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let arr = [ 1, 2, 15 ];</span><br><span class="line"></span><br><span class="line">// the method reorders the content of arr</span><br><span class="line">arr.sort();</span><br><span class="line"></span><br><span class="line">alert( arr );  // 1, 15, 2</span><br></pre></td></tr></table></figure>
+<p>你注意到结果中有什么奇怪的地方吗？</p>
+<p>顺序变成了1, 15, 2。不正确。但为什么？</p>
+<p>默认情况下，项目按字符串排序。</p>
+<p>从字面上看，所有元素都转换为字符串以进行比较。对于字符串，应用了字典顺序，并且确实是”2” &gt; “15”.</p>
+<p>要使用我们自己的排序顺序，我们需要提供一个函数作为arr.sort().</p>
+<p>该函数应该比较两个任意值并返回：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let arr = [ 1, 2, 15 ];</span><br><span class="line"></span><br><span class="line">arr.sort(function(a, b) &#123; return a - b; &#125;);</span><br><span class="line"></span><br><span class="line">alert(arr);  // 1, 2, 15</span><br></pre></td></tr></table></figure>
+<p>最佳箭头功能<br>还记得箭头函数吗？我们可以在这里使用它们进行更整洁的排序：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arr.sort( (a, b) =&gt; a - b );</span><br></pre></td></tr></table></figure>
+<p>数组对象的话</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">var person = [&#123;name:&quot;Rom&quot;,age:12&#125;,&#123;name:&quot;Bob&quot;,age:22&#125;,&#123;name:&quot;Ma&quot;,age:5&#125;,&#123;name:&quot;Tony&quot;,age:25&#125;]</span><br><span class="line"> </span><br><span class="line">person.sort((a,b)=&gt;&#123; return a.age-b.age&#125;)//升序</span><br><span class="line"> </span><br><span class="line">person.sort((a,b)=&gt;&#123; return b.age-a.age&#125;)//降序</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">唐翔</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/08/12/js%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/">http://example.com/2022/08/12/js%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">不改了</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/js%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/">js数组方法汇总</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/10/eslint/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">eslint</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/15/js%E6%A8%A1%E5%9D%97%E5%8C%96/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">js模块化</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/bg.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">唐翔</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E7%AF%87"><span class="toc-number">1.</span> <span class="toc-text">开篇</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%B4%E5%B0%BE%E5%A2%9E%E5%88%A0"><span class="toc-number">2.</span> <span class="toc-text">头尾增删</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#splice"><span class="toc-number">3.</span> <span class="toc-text">splice</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#slice"><span class="toc-number">4.</span> <span class="toc-text">slice</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#concat"><span class="toc-number">5.</span> <span class="toc-text">concat</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8%E6%95%B0%E7%BB%84%E4%B8%AD%E6%90%9C%E7%B4%A2indexOf-lastIndexOf-and-includes"><span class="toc-number">6.</span> <span class="toc-text">在数组中搜索indexOf&#x2F;lastIndexOf and includes</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#find-and-findIndex-findLastIndex"><span class="toc-number">7.</span> <span class="toc-text">find and findIndex&#x2F;findLastIndex</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#map"><span class="toc-number">8.</span> <span class="toc-text">map</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sort"><span class="toc-number">9.</span> <span class="toc-text">sort</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/15/js%E6%A8%A1%E5%9D%97%E5%8C%96/" title="js模块化"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="js模块化"/></a><div class="content"><a class="title" href="/2022/08/15/js%E6%A8%A1%E5%9D%97%E5%8C%96/" title="js模块化">js模块化</a><time datetime="2022-08-15T00:52:45.000Z" title="发表于 2022-08-15 08:52:45">2022-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/12/js%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/" title="js数组方法汇总"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="js数组方法汇总"/></a><div class="content"><a class="title" href="/2022/08/12/js%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/" title="js数组方法汇总">js数组方法汇总</a><time datetime="2022-08-12T02:04:15.000Z" title="发表于 2022-08-12 10:04:15">2022-08-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/10/eslint/" title="eslint"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="eslint"/></a><div class="content"><a class="title" href="/2022/08/10/eslint/" title="eslint">eslint</a><time datetime="2022-08-10T10:40:21.000Z" title="发表于 2022-08-10 18:40:21">2022-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/10/webpack/" title="webpack"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="webpack"/></a><div class="content"><a class="title" href="/2022/08/10/webpack/" title="webpack">webpack</a><time datetime="2022-08-10T06:23:01.000Z" title="发表于 2022-08-10 14:23:01">2022-08-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/03/%E7%89%9B%E5%AE%A2%E7%BD%91/" title="牛客网"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="牛客网"/></a><div class="content"><a class="title" href="/2022/08/03/%E7%89%9B%E5%AE%A2%E7%BD%91/" title="牛客网">牛客网</a><time datetime="2022-08-03T06:13:43.000Z" title="发表于 2022-08-03 14:13:43">2022-08-03</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 唐翔</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div>-<script async src="https://npm.elemecdn.com/tzy-blog/lib/js/theme/cursor.js></script> -<script data-pjax defer src="https://npm.elemecdn.com/tzy-blog/lib/js/theme/chocolate.js"></script><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
